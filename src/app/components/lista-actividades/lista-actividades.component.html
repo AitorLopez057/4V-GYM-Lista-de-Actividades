@@ -1,0 +1,36 @@
+<h2 class="text-center">angular-hola-clase</h2>
+<h2 class="text-center">Actividades GYM 4V</h2>
+
+<!-- Tabla de Actividades hecha con Angular Material -->
+<div class="container mat-elevation-z8">
+  
+  <table mat-table [dataSource]="actividades" class="mat-table">
+    <!-- Columna Fecha -->
+    <ng-container matColumnDef="Fecha">
+      <th mat-header-cell *matHeaderCellDef>Fecha</th>
+      <td mat-cell *matCellDef="let actividad">{{ actividad.fecha }}</td>
+    </ng-container>
+
+    <!-- Columna Lugar -->
+    <ng-container matColumnDef="Lugar">
+      <th mat-header-cell *matHeaderCellDef>Lugar</th>
+      <td mat-cell *matCellDef="let actividad">{{ actividad.lugar }}</td>
+    </ng-container>
+
+    <!-- Columna Monitor -->
+    <ng-container matColumnDef="Monitor">
+      <th mat-header-cell *matHeaderCellDef>Monitor</th>
+      <td mat-cell *matCellDef="let actividad">{{ actividad.monitor }}</td>
+    </ng-container>
+
+    <!-- Columna Tipo -->
+    <ng-container matColumnDef="Tipo">
+      <th mat-header-cell *matHeaderCellDef>Tipo</th>
+      <td mat-cell *matCellDef="let actividad">{{ actividad.tipo }}</td>
+    </ng-container>
+
+    <!-- Header y Filas -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
